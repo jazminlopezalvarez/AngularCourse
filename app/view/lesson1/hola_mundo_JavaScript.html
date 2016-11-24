@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ <title>Hola mundo JavaScript</title>
+ </head>
+ <body>
+ <p id="greeting1"></p>
+ <script>
+ var isIE = document.attachEvent;
+ var addListener = isIE
+ ? function(e, t, fn) {
+ e.attachEvent('on' + t, fn);}
+ : function(e, t, fn) {
+ e.addEventListener(t, fn, false);};
+ addListener(window, 'load', function(){
+ var greeting = document.getElementById('greeting1');
+ if (isIE) {
+ greeting.innerText = 'Hola Mundo!';
+ console.log("innerText "+greeting.innerText);
+ } else {
+ greeting.textContent = 'Hola Mundo!';
+ console.log("textContent "+greeting.textContent);
+ }
+ });
+ </script>
+ </body>
+</html> 
