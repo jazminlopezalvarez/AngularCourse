@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ <title>
+ Lesson 2 - Practice
+ </title>
+ <meta charset="utf-8" />
+ <script src="../../bower_components/angular/angular.js"></script>
+ <script src="../../js/lesson2directive_3.js"></script>
+ </head>
+ <body>
+ <h1>
+ Lesson 2 - Practice 8 - Directive
+ </h1>
+ <div ng-app="myApp" ng-controller="myCtrl">
+ <h2>Use directives ng-hide, ng-mousemove, ng-change, ngblur,</h2>
+
+ <button ng-click="myFunc()">Click Me!</button>
+ <div ng-hide="showMe">
+ <h3 ng-mousemove="count = count + 1">Mouse
+over me! </h3><p>{{ count }}</p>
+ <h3>Use directives ng-change, ng-blur</h3>
+ <input placeholder="write over me!" ng-model="test"
+	ng-change="chan=chan + 1" ng-blur="blur= blur + 1"/>
+ <p>ng-change active: {{ chan }}</p>
+ <p>ng-blur active: {{ blur }}</p>
+ </div>
+
+ </div>
+
+ </body>
+</html>

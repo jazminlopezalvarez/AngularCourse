@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ <title>
+ Lesson 2 - Practice
+ </title>
+ <meta charset="utf-8" />
+ <script src="../../bower_components/angular/angular.js"></script>
+ <script src="../../js/SaveProducts.js"></script>
+ </head>
+ <body>
+ <h1>
+ Lesson 2 - Practice Save Products
+ </h1>
+	<div ng-app="myApp" ng-controller="myCtrl as varScope">
+	 	<button type="button" ng-click="varScope.showControles()" ng-show="varScope.mostrarAgregar">Agregar</button>
+
+	<div ng-show="varScope.mostrarControles">
+ 	
+ 	<input type="input" ng-model="varScope.newProduct.id" ng-hide="true">
+ 	Producto:
+ 	<input type="input" ng-model="varScope.newProduct.producto">
+ 	Tamaño:
+ 	<input type="input" ng-model="varScope.newProduct.tamanio">
+ 	Cantidad:
+ 	<input type="input" ng-model="varScope.newProduct.cantidad">
+ 	Tienda:
+ 	<input type="input" ng-model="varScope.newProduct.tienda">
+
+	<button type="button" ng-click="varScope.AgregarProduct(varScope.newProduct)">Guardar</button>
+ 	</disv>
+ 
+<div ng-show="varScope.mostrarTable">
+	 	TOTAL PRODUCTOS: {{varScope.product.length}}
+</div>
+ <div>
+ <table ng-table="vm.tableProducts" class="table" ng-show="varScope.mostrarTable">
+     <tr>
+      <th>Producto</th>
+      <th>Tamaño</th>
+      <th>Cantidad</th>
+      <th>Tienda</th>
+   </tr>
+
+    <tr ng-repeat="objproduct in varScope.product">
+        <td title="'Producto'" >
+            {{objproduct.producto}}</td>
+        <td title="'Tamaño'" >
+            {{objproduct.tamanio}}</td>
+        <td title="'Cantidad'"> 
+            {{objproduct.cantidad}}</td>
+         <td title="'Tienda'" >
+            {{objproduct.tienda}}</td>
+         <td>
+         <button type="button" ng-click="varScope.EliminarProduct(objproduct)">Eliminar</button>
+         </td>
+    </tr>
+</table>
+ </div>
+ </body>
+</html>
